@@ -34,7 +34,6 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .app_data(web::Data::new(state.clone()))
-            // Middleware: force Content-Type to application/json on every request
             .wrap_fn(|mut req, srv| {
                 req.headers_mut().insert(
                     header::CONTENT_TYPE,
@@ -72,7 +71,6 @@ async fn load_data(filename: &str) -> Result<Vec<String>> {
     Ok(lines)
 }
 
-// Query interface for user prompts
 async fn root(
     state: web::Data<Arc<RAGState>>,
     body: web::Json<Value>,

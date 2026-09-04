@@ -78,11 +78,11 @@ impl App {
                 self.prompt.pop();
             },
             KeyCode::Enter => {
-                self.history.push(self.prompt.to_string());
-                self.history.push("Loading question".to_string());
-                self.prompt.clear();
+            self.history.push(self.prompt.to_string());
+            self.history.push("Loading question".to_string());
+            self.prompt.clear(); 
 
-                let answer = ask(&self.prompt).unwrap_or("".to_string());
+            let answer = ask(&self.prompt).unwrap_or("".to_string()); 
                 self.history.push(self.prompt.to_string());
                 self.history.push(answer.to_string());
             },
