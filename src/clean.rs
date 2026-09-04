@@ -24,13 +24,18 @@ impl Cleaner {
     pub fn clean(&self, text: &str) -> String {
         let words: Vec<String> = text
             .split_whitespace()
-            .map(|word| word.to_lowercase())
+            .map(|word| {
+                word.chars()
+                    .filter(|c| c.is_alphanumeric())
+                    .collect::<String>()
+                    .to_lowercase()
+            })
+            .filter(|word| !word.is_empty())
             // Remove "filler words" "this, the, and, a, uh"
             .filter(|word| !self.stop_words.contains(word))
             // Remove suffix "ing, less, ness, er"
             .map(|word| self.stemmer.stem(&word).to_string())
             .collect();
         words.join(" ")
-        
     }
 }
