@@ -1,9 +1,3 @@
-readme_content = """# Core Retrieval-Augmented Generation (RAG) Architecture & Indexing Components
-
-This document provides a comprehensive technical guide to the foundational building blocks handling **data indexing, retrieval, vector compression, and hybrid scoring** in modern Retrieval-Augmented Generation (RAG) systems.
-
----
-
 ## Technical Overview
 
 A robust RAG pipeline requires balancing **exact lexical matching**, **conceptual understanding**, **memory efficiency**, and **result fusion**. The following six components form the core system architecture:
