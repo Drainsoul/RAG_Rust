@@ -66,5 +66,6 @@ Thumbs.db
 .env
 .env.local
 
+
 # Embedding
-.fastembed_cache
+.fastembed_cache/
